@@ -2,6 +2,7 @@ variable "bucket_name" { }
 variable "acm_certificate_arn" { }
 variable "zone_id" { }
 variable "domain_name" { }
+variable "aliases" { }
 
 resource "aws_s3_bucket" "website" {
     bucket = var.bucket_name
@@ -84,6 +85,7 @@ resource "aws_cloudfront_distribution" "website" {
            restriction_type = "none"
        }
      }
+     aliases =  var.aliases
 }
 
 resource "aws_route53_record" "website" {

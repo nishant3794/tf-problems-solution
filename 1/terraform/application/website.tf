@@ -4,4 +4,5 @@ module "static_website" {
     acm_certificate_arn = data.aws_acm_certificate.cert.arn
     zone_id = data.aws_route53_zone.zone.zone_id
     domain_name = "nishant-coda.assessments.coda.run"
+    aliases = ["nishant-coda.assessments.coda.run"]
 }
